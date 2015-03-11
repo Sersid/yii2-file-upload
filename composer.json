@@ -5,14 +5,13 @@
     "keywords": ["yii2","extension", "file upload", "image upload"],
     "license": "BSD-4-Clause",
     "authors": [
-        {
-            "name": "Sersid",
-            "email": "sersONEd@gmail.com"
-        }
+      {
+          "name": "Sersid",
+          "email": "sersONEd@gmail.com"
+       }
     ],
     "require": {
-        "yiisoft/yii2": "*",
-        "yurkinx/yii2-image": "dev-master"
+        "yiisoft/yii2": "*"
     },
     "autoload": {
         "psr-4": {
