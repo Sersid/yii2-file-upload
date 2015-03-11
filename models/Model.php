@@ -10,6 +10,7 @@ use yii\helpers\FileHelper;
  *
  * @property integer $id
  * @property string $code
+ * @property integer $is_image
  * @property integer $width
  * @property integer $height
  * @property integer $size
@@ -70,5 +71,14 @@ class Model extends \yii\db\ActiveRecord
         }
 
         return false;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function afterFind()
+    {
+        parent::afterFind();
+        $this->is_image == ($this->is_image !== null) ? boolval($this->is_image) : null;
     }
 }
