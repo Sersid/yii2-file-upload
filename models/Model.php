@@ -79,6 +79,6 @@ class Model extends \yii\db\ActiveRecord
     public function afterFind()
     {
         parent::afterFind();
-        $this->is_image == ($this->is_image !== null) ? boolval($this->is_image) : null;
+        $this->is_image == ($this->is_image !== null) ? (bool)$this->is_image : null;
     }
 }
