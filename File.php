@@ -153,6 +153,14 @@ class File extends \yii\base\Component
             throw new HttpException(404, 'File not found');
         }
 
+        // Render original
+        if(isset($params['original'])) {
+            header("Content-Type: ".FileHelper::getMimeType($file));
+            readfile($file);
+            return;
+        }
+
+        // Render  large (resized) image
         $image = null;
         $fileLarge = $dir. 'large.' .$ext;
         if(is_file($fileLarge)) {
